@@ -3,14 +3,17 @@ package puc.tutorial.rest.api.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 
 @Entity(name = "pedidoitens")
+@IdClass(PedidoItensModelPK.class)
 public class PedidoItensModel {
 
     @Id
     public String codPedido;
 
-    @Column(nullable = false, length = 10)
+    @Id
+    @Column(length = 10)
     public Integer codProduto;
 
     @Column(nullable = false, length = 5)
