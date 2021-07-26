@@ -21,6 +21,9 @@ public class ProdutosModel {
     public Integer getCodProduto() {
         return codProduto;
     }
+    
+    @Column (nullable = true, length = 100)
+    public String categoriaProduto;
 
     public void setCodProduto(Integer codProduto) {
         this.codProduto = codProduto;
