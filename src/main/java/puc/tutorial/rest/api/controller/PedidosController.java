@@ -18,9 +18,13 @@ import puc.tutorial.rest.api.repository.PedidosRepository;
 
 @RestController
 public class PedidosController {
-
     @Autowired
     private PedidosRepository repository;
+    
+    @GetMapping(path = "/api/pedido")
+    public Iterable<PedidosModel> consultar(){
+        return repository.findAll();
+    }	
 
     @GetMapping(path = "/api/pedido/{codPedido}")
     public ResponseEntity consultar(@PathVariable("codPedido") Integer codPedido){

@@ -9,7 +9,6 @@ import puc.tutorial.rest.api.repository.UsuarioRepository;
 
 @RestController
 public class UsuarioController {
-
     @Autowired
     private UsuarioRepository repository;
 

@@ -10,6 +10,11 @@ import puc.tutorial.rest.api.repository.CategoriasRepository;
 public class CategoriasController {
     @Autowired
     private CategoriasRepository repository;
+    
+    @GetMapping(path = "/api/categoria")
+    public Iterable<CategoriasModel> consultar(){
+        return repository.findAll();
+    }
 
     @GetMapping(path = "/api/categoria/{codCategoria}")
     public ResponseEntity consultar(@PathVariable("codCategoria") String codCategoria){

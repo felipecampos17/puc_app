@@ -10,6 +10,11 @@ import puc.tutorial.rest.api.repository.ProdutosRepository;
 public class ProdutosController {
     @Autowired
     private ProdutosRepository repository;
+    
+    @GetMapping(path = "/api/produto")
+    public Iterable<ProdutosModel> consultar(){
+        return repository.findAll();
+    }
 
     @GetMapping(path = "/api/produto/{codProduto}")
     public ResponseEntity consultar(@PathVariable("codProduto") Integer codProduto){
