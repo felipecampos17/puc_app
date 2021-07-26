@@ -22,7 +22,7 @@ public class ProdutosModel {
         return codProduto;
     }
     
-    @Column (nullable = true, length = 100)
+    @Column (nullable = false, length = 100)
     public String categoriaProduto;
 
     public void setCodProduto(Integer codProduto) {
