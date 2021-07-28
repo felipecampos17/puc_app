@@ -27,4 +27,10 @@ public class ProdutosController {
     public ProdutosModel salvar(@RequestBody ProdutosModel produto){
         return repository.save(produto);
     }
+    
+    @DeleteMapping(path = "api/produto/{codProduto}")
+    public ResponseEntity<Object> deletar(@PathVariable("codProduto") Integer codProduto) {
+    	repository.deleteById(codProduto);
+    	return ResponseEntity.ok().build();
+    }
 }

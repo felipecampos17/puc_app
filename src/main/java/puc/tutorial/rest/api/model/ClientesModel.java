@@ -23,7 +23,7 @@ public class ClientesModel {
     public String municipio;
 
     @Column(nullable = false, length = 15)
-    public String tefelone;
+    public String telefone;
 
     @Column(nullable = false, length = 50)
     public String email;
@@ -72,11 +72,11 @@ public class ClientesModel {
     }
 
     public String getTefelone() {
-        return tefelone;
+        return telefone;
     }
 
-    public void setTefelone(String tefelone) {
-        this.tefelone = tefelone;
+    public void setTefelone(String telefone) {
+        this.telefone = telefone;
     }
 
     public String getEmail() {

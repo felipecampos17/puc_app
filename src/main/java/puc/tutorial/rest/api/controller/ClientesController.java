@@ -24,5 +24,13 @@ public class ClientesController {
     }
 
     @PostMapping(path = "api/cliente/salvar")
-    public ClientesModel salvar(@RequestBody ClientesModel cliente) {return repository.save(cliente);}
+    public ClientesModel salvar(@RequestBody ClientesModel cliente) {
+    	return repository.save(cliente);
+    }
+    
+    @DeleteMapping(path = "api/cliente/{cpf}")
+    public ResponseEntity<Object> deletar(@PathVariable("cpf") String cpf) {
+    	repository.deleteById(cpf);
+    	return ResponseEntity.ok().build();
+    }
 }

@@ -27,4 +27,10 @@ public class CategoriasController {
     public CategoriasModel salvar(@RequestBody CategoriasModel categoria){
         return repository.save(categoria);
     }
+    
+    @DeleteMapping(path = "api/categoria/{codCategoria}")
+    public ResponseEntity<Object> deletar(@PathVariable("codCategoria") String codCategoria) {
+    	repository.deleteById(codCategoria);
+    	return ResponseEntity.ok().build();
+    }
 }
